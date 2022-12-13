@@ -35,15 +35,15 @@ const usersSlice = createSlice({
       state.error = action.error;
     });
 
-    builder.removeUser(removeUser.pending, (state, action) => {
+    builder.addCase(removeUser.pending, (state, action) => {
       state.isLoading = true;
     });
-    builder.removeUser(removeUser.fulfilled, (state, action) => {
+    builder.addCase(removeUser.fulfilled, (state, action) => {
       state.isLoading = false;
       // fix me
       console.log(action);
     });
-    builder.removeUser(removeUser.rejected, (state, action) => {
+    builder.addCase(removeUser.rejected, (state, action) => {
       state.isLoading = false;
       state.error = action.error;
     });
