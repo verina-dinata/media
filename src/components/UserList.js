@@ -1,17 +1,30 @@
 import { useEffect  } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../store";
+
 
 function UserList() {
   const dispatch = useDispatch();
+
+  const {isLoading, data, error} = useSelector((state) => {
+    return state.users; // { data: [], isLoading: false. error: null }
+  });
 
   useEffect(() => {
     dispatch(fetchUsers());
   }, [dispatch]);
 
+  if (isLoading) {
+    return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div>Error fetching data...</div>
+  }
+
   return(
     <div>
-      UserList
+      {data.length}
     </div>
   );
 };
