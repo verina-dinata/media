@@ -1,6 +1,25 @@
 {
   "users": [
-    { "id": 1, "name": "Myra"}
+    {
+      "id": 1,
+      "name": "Myra"
+    },
+    {
+      "name": "Nathaniel Douglas",
+      "id": 2
+    },
+    {
+      "name": "Louis Lakin",
+      "id": 3
+    },
+    {
+      "name": "John Davis",
+      "id": 4
+    },
+    {
+      "name": "Lynda Lakin II",
+      "id": 5
+    }
   ],
   "albums": [],
   "photos": []
