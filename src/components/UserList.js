@@ -22,9 +22,17 @@ function UserList() {
     return <div>Error fetching data...</div>
   }
 
+  const renderedUsers = data.map((user) => {
+    return <div key={user.id} className='mb-2 boorder rounded'>
+      <div className="flex p-2 justify-between items-center cursor-pointer">
+        {user.name}
+      </div>
+    </div>
+  })
+
   return(
     <div>
-      {data.length}
+      {renderedUsers}
     </div>
   );
 };
