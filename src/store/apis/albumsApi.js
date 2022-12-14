@@ -9,7 +9,9 @@ const albumsApi = createApi({
   endpoints(builder) {
     return {
       addAlbum: builder.mutation({
-        invalidatesTags: ['Album'],
+        invalidatesTags: (result, error, user) => {
+          return [{ type: 'Album', id: user.id }]
+        },
         query: (user) => {
           return {
             url: '/albums',
@@ -23,7 +25,12 @@ const albumsApi = createApi({
       }),
 
       fetchAlbums: builder.query({
-        providesTags: ['Album'], // 'Albums' is up to you
+        providesTags: (result, error, user) => {
+          return [{ type: 'Album', id: user.id }];
+        }, // 'Albums' is up to you
+          // when you define providesTags as a function, that function
+          // will automatically be called with arguements(result, error, arg)
+          // arg === { id:1, name: 'Myra' } (whatever we passed to useFetchAlbumsQuery)
         query: (user) => {
           return {
             url: '/albums', // baseUrrl + url => http:localhost:3005/albums
