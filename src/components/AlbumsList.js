@@ -1,9 +1,10 @@
 import { useFetchAlbumsQuery } from "../store";
+import Skeleton from './Skeleton'
+import ExpandablePanel from './ExpandablePanel';
+import Button from './Button';
 
 function AlbumsList({ user }) {
   const { data, error, isLoading } = useFetchAlbumsQuery(user); // when this is called, it will fetch data
-
-  console.log(data, error, isLoading);
 
   return(
     <div>
