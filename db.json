@@ -34,6 +34,17 @@
       "id": 10,
       "title": "Hiking Trip",
       "userId": 1
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "title": "Awesome Cotton Car",
+      "id": 13
     }
   ],
   "photos": []
