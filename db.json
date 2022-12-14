@@ -45,6 +45,16 @@
       "userId": 1,
       "title": "Awesome Cotton Car",
       "id": 13
+    },
+    {
+      "userId": 1,
+      "title": "Rustic Steel Car",
+      "id": 14
+    },
+    {
+      "userId": 1,
+      "title": "Sleek Wooden Table",
+      "id": 15
     }
   ],
   "photos": []
