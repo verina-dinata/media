@@ -1,6 +1,6 @@
-function PhotosListItem() {
+function PhotosListItem({ photo }) {
   return(
-    <div>PhotosListItem</div>
+    <div></div>
   );
 };
 
