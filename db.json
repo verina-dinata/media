@@ -80,13 +80,28 @@
       "userId": 3,
       "title": "Refined Fresh Cheese",
       "id": 22
+    },
+    {
+      "userId": 1,
+      "title": "Handcrafted Bronze Keyboard",
+      "id": 23
     }
   ],
   "photos": [
     {
       "albumId": 13,
-      "url": "https://loremflickr.com/150/150/abstract?lock=65991",
-      "id": 2
+      "url": "https://loremflickr.com/150/150/abstract?lock=74455",
+      "id": 4
+    },
+    {
+      "albumId": 13,
+      "url": "https://loremflickr.com/150/150/abstract?lock=7567",
+      "id": 5
+    },
+    {
+      "albumId": 13,
+      "url": "https://loremflickr.com/150/150/abstract?lock=36895",
+      "id": 6
     }
   ]
 }

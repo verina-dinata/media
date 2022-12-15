@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { faker } from '@faker-js/faker';
-import { buildQueries } from '@testing-library/react';
 
 const photosApi = createApi({
   reducerPath: 'photos',
@@ -10,6 +9,9 @@ const photosApi = createApi({
   endpoints(builder) {
     return {
       removePhoto: builder.mutation({
+        invalidatesTags: (result, error, photo) => {
+          return [{ type: 'Photo', id: photo.id }]
+        },
         query: (photo) => {
           return {
             method: 'DELETE',
@@ -18,6 +20,9 @@ const photosApi = createApi({
         }
       }),
       addPhoto: builder.mutation({
+        invalidatesTags: (result, error, album) => {
+          return [{ type: 'AlbumPhoto', id: album.id}]
+        },
         query: (album) => { // assume that when we call useAddPhoto, we will provide the album object
           return {
             url: '/photos',
@@ -30,6 +35,13 @@ const photosApi = createApi({
         }
       }),
       fetchPhotos: builder.query({
+        providesTags: (result, error, album) => {
+          const tags = result.map((photo) => {
+            return { type: 'Photo', id: photo.id }
+          });
+          tags.push({ type: 'AlbumPhoto', id: album.id })
+          return tags;
+        },
         query: (album) => {
           return {
             url: '/photos',
