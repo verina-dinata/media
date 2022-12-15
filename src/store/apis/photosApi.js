@@ -7,9 +7,29 @@ const photosApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'http://localhost:3005'
   }),
-  endpoints(buulder) {
+  endpoints(builder) {
     return {
-      fetchPhotos: buildQueries.query({
+      removePhoto: builder.mutation({
+        query: (photo) => {
+          return {
+            method: 'DELETE',
+            url: `photos/${photo.id}`
+          }
+        }
+      }),
+      addPhoto: builder.mutation({
+        query: (album) => { // assume that when we call useAddPhoto, we will provide the album object
+          return {
+            url: '/photos',
+            method: 'POST',
+            body: {
+              albumId: album.id,
+              url: faker.image.abstract(150, 150, true)
+            }
+          };
+        }
+      }),
+      fetchPhotos: builder.query({
         query: (album) => {
           return {
             url: '/photos',
@@ -23,3 +43,6 @@ const photosApi = createApi({
     };
   }
 });
+
+export const { useFetchPhotos, useAddPhotoMutation, useRemovePhotoMutation } = photosApi;
+export { photosApi };
