@@ -85,11 +85,6 @@
   "photos": [
     {
       "albumId": 13,
-      "url": "https://loremflickr.com/150/150/abstract?lock=21837",
-      "id": 1
-    },
-    {
-      "albumId": 13,
       "url": "https://loremflickr.com/150/150/abstract?lock=65991",
       "id": 2
     }

@@ -1,4 +1,4 @@
-import { useFetchPhotosQuery, useAddPhotoMutation, useRemovePhotoMutation } from "../store";
+import { useFetchPhotosQuery, useAddPhotoMutation } from "../store";
 import Button from './Button';
 import Skeleton from './Skeleton'
 import PhotosListItem from "./PhotosListItem";
