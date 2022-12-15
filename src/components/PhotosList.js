@@ -1,4 +1,7 @@
-function PhotosList({ album  }) {
+import { useFetchPhotosQuery } from "../store";
+
+function PhotosList({ album }) {
+  useFetchPhotosQuery(album);
   return(
     <div>PhotosList</div>
   );
