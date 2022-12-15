@@ -57,14 +57,29 @@
       "id": 16
     },
     {
-      "userId": 1,
-      "title": "Luxurious Cotton Tuna",
+      "userId": 3,
+      "title": "Oriental Steel Pants",
       "id": 17
     },
     {
+      "userId": 3,
+      "title": "Fantastic Soft Towels",
+      "id": 19
+    },
+    {
       "userId": 1,
-      "title": "Luxurious Granite Sausages",
-      "id": 18
+      "title": "Recycled Metal Pizza",
+      "id": 20
+    },
+    {
+      "userId": 3,
+      "title": "Electronic Fresh Fish",
+      "id": 21
+    },
+    {
+      "userId": 3,
+      "title": "Refined Fresh Cheese",
+      "id": 22
     }
   ],
   "photos": []
