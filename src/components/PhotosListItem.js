@@ -1,6 +1,8 @@
 function PhotosListItem({ photo }) {
   return(
-    <div></div>
+    <div>
+      <img className="h-20 w-20" src={photo.url} alt="random pic" />
+    </div>
   );
 };
 
